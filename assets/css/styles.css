@@ -1,9 +1,10 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 500;
   letter-spacing: 5px;
+  user-select: none;
 }
 
 .item {
@@ -27,60 +28,117 @@
 
 .item1 {
   background-color: #0e1628;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .item2 {
   background-color: #f13a4b;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .item3 {
   background-color: #4685c4;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .item3 {
   background-color: #4685c4;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .item4 {
   background-color: #223349;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .item5 {
   background-color: #bee3e5;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .item6 {
   background-color: #47bd99;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .item7 {
   background-color: #ffd170;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 /* *********** C Ó D I G O   S O L U C I Ó N *********** */
-.container{
+.container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(12, 1fr);
   height: 100vh;
 }
 
-.item2{
+.item2 {
   grid-column: span 3;
 }
-.item3{
+
+.item3 {
   grid-column: span 4;
   grid-row: span 5;
 }
-.item4{
+
+.item4 {
   grid-column: span 2;
   grid-row: span 4;
 }
-.item5, .item6{
+
+.item5, .item6 {
   grid-column: 4 / 5;
   grid-row: span 2;
 }
-.item7{
+
+.item7 {
   grid-column: 1 / 5;
   grid-row: span 2;
+}
+
+.item1:hover,
+.item2:hover,
+.item3:hover,
+.item4:hover,
+.item5:hover,
+.item6:hover,
+.item7:hover {
+  background-color: #15B359;
+  color: #333333;
+  text-transform: uppercase;
+  box-shadow: 0px 0px 20px #031A0D inset;
+}
+
+.item1:hover p,
+.item2:hover p,
+.item3:hover p,
+.item4:hover p,
+.item5:hover p,
+.item6:hover p,
+.item7:hover p {
+  animation: appear 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  font-weight: bold;
+  letter-spacing: 20px;
+}
+
+@keyframes appear {
+  33%{
+    transform: translateX(100%) ;
+  }
+  66%{
+    transform: translateX(-100%) ;
+  }
+  100%{
+    transform: translateX(0%) ;
+  }
 }
